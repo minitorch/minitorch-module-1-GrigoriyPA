@@ -68,10 +68,10 @@ def circle(N: int) -> Graph:
 
 def spiral(N: int) -> Graph:
 
-    def x(t: float):
+    def x(t: float) -> float:
         return t * math.cos(t) / 20.0
 
-    def y(t: float):
+    def y(t: float) -> float:
         return t * math.sin(t) / 20.0
     X = [(x(10.0 * (float(i) / (N // 2))) + 0.5, y(10.0 * (float(i) / (N // 2))) + 0.5) for i in range(5 + 0, 5 + N // 2)]
     X = X + [(y(-10.0 * (float(i) / (N // 2))) + 0.5, x(-10.0 * (float(i) / (N // 2))) + 0.5) for i in range(5 + 0, 5 + N // 2)]
