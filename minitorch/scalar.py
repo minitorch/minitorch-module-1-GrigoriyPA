@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any, Iterable, Optional, Sequence, Tuple, Type, Union
+from typing import Any, Iterable, Optional, Sequence, Tuple, Union
 
 import numpy as np
 
@@ -16,7 +16,6 @@ from .scalar_functions import (
     Mul,
     Neg,
     ReLU,
-    ScalarFunction,
     Sigmoid,
 )
 
@@ -36,7 +35,7 @@ class ScalarHistory:
 
     """
 
-    last_fn: Optional[ScalarFunction] = None
+    last_fn: Optional[Any] = None
     ctx: Optional[Context] = None
     inputs: Sequence[Scalar] = ()
 
