@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import List, Tuple
 
 
-def make_pts(N: int):
+def make_pts(N: int) -> List[Tuple[float, float]]:
     X = []
     for i in range(N):
         x_1 = random.random()
@@ -20,7 +20,7 @@ class Graph:
     y: List[int]
 
 
-def simple(N: int):
+def simple(N: int) -> Graph:
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -29,7 +29,7 @@ def simple(N: int):
     return Graph(N, X, y)
 
 
-def diag(N: int):
+def diag(N: int) -> Graph:
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -38,7 +38,7 @@ def diag(N: int):
     return Graph(N, X, y)
 
 
-def split(N: int):
+def split(N: int) -> Graph:
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -47,7 +47,7 @@ def split(N: int):
     return Graph(N, X, y)
 
 
-def xor(N: int):
+def xor(N: int) -> Graph:
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -56,7 +56,7 @@ def xor(N: int):
     return Graph(N, X, y)
 
 
-def circle(N: int):
+def circle(N: int) -> Graph:
     X = make_pts(N)
     y = []
     for x_1, x_2 in X:
@@ -66,7 +66,7 @@ def circle(N: int):
     return Graph(N, X, y)
 
 
-def spiral(N: int):
+def spiral(N: int) -> Graph:
 
     def x(t: float):
         return t * math.cos(t) / 20.0
