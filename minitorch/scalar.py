@@ -36,7 +36,7 @@ class ScalarHistory:
 
     """
 
-    last_fn: Optional[Type[ScalarFunction]] = None
+    last_fn: Optional[ScalarFunction] = None
     ctx: Optional[Context] = None
     inputs: Sequence[Scalar] = ()
 
@@ -164,13 +164,13 @@ class Scalar:
         assert h.ctx is not None
 
         derivs = h.last_fn.backward(h.ctx, d_output)
-        for d, p in zip(derivs, self.history.inputs):
+        for d, p in zip(derivs, h.inputs):
             if p.is_constant():
                 continue
 
             if p.is_leaf():
                 p.accumulate_derivative(d)
-                yield [p, p.derivative]
+                yield p, p.derivative
             else:
                 yield from p.chain_rule(d)
 

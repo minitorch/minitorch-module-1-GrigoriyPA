@@ -2,11 +2,9 @@
 Be sure you have minitorch installed in you Virtual Env.
 >>> pip install -Ue .
 """
-import copy
 import random
 
 import minitorch
-from minitorch import operators
 
 
 class Network(minitorch.Module):
