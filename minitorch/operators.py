@@ -48,32 +48,32 @@ def neg(x: float) -> float:
     return -x
 
 
-def lt(x: float, y: float) -> bool:
-    return x < y
+def lt(x: float, y: float) -> float:
+    return float(x < y)
 
 
-def eq(x: float, y: float) -> bool:
-    return x == y
+def eq(x: float, y: float) -> float:
+    return float(x == y)
 
 
 def max(x: float, y: float) -> float:
     return x if x > y else y
 
 
-def is_close(x: float, y: float) -> bool:
-    return abs(x - y) < 1e-2
+def is_close(x: float, y: float) -> float:
+    return float(abs(x - y) < 1e-2)
 
 
 def sigmoid(x: float) -> float:
-    if x >= 0:
-        return 1 / (1 + math.exp(-x))
+    if x >= 0.0:
+        return 1.0 / (1.0 + math.exp(-x))
 
     ex = math.exp(x)
-    return ex / (1 + ex)
+    return ex / (1.0 + ex)
 
 
 def relu(x: float) -> float:
-    return max(x, 0)
+    return max(x, 0.0)
 
 
 def log(x: float) -> float:
@@ -89,7 +89,7 @@ def log_back(x: float, d: float) -> float:
 
 
 def inv(x: float) -> float:
-    return 1 / x
+    return 1.0 / x
 
 
 def inv_back(x: float, d: float) -> float:
@@ -97,7 +97,7 @@ def inv_back(x: float, d: float) -> float:
 
 
 def relu_back(x: float, d: float) -> float:
-    return d if x > 0 else 0
+    return d if x > 0 else 0.0
 
 
 # ## Task 0.3

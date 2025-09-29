@@ -16,3 +16,12 @@ python sync_previous_module.py previous-module-dir current-module-dir
 The files that will be synced are:
 
         minitorch/operators.py minitorch/module.py tests/test_module.py tests/test_operators.py project/run_manual.py
+
+Learn results for `ScalarTrain`:
+
+- simple - `simple.log` (score 50 / 50)
+- diag - `diag.log` (score 50 / 50)
+- split - `split.log` (score 50 / 50)
+- xor - `xor.log` (score 50 / 50)
+- circle - `circle.log` (score 50 / 50)
+- spiral - `spiral.log` (score 29 / 50)
